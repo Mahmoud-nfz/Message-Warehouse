@@ -1,0 +1,13 @@
+<div id="container">
+    <div *ngIf="paste" class="text-area-container">
+        <div class="text-area-header">
+            <h2>{{paste.title}}</h2>
+        </div>
+        <div class="text-area-body">
+            <textarea placeholder="Paste your text here" [(ngModel)]="paste.body"></textarea>
+        </div>
+        <div *ngIf="saveFunction" class="text-area-footer">
+            <button (click)="saveFunction()">Save</button>
+        </div>
+    </div>
+</div>

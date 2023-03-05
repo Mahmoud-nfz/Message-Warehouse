@@ -1,0 +1,11 @@
+<h2>My pastes</h2>
+<ul class="pastes">
+  <li *ngFor="let paste of pastes">
+    <button type="button" (click)="onSelect(paste)" [class.selected]="paste === selectedPaste">
+      <span class="badge">{{paste.id}}</span>
+      <span class="name">{{paste.title}}</span>
+    </button>
+  </li>
+</ul>
+
+<app-paste-detail [paste]="selectedPaste"></app-paste-detail>

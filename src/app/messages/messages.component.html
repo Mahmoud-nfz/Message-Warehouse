@@ -1,0 +1,25 @@
+<div *ngIf="messageService.messages.length">
+    <h2>Messages</h2>
+    <button type="button" class="clear"
+            (click)="messageService.clear()">Clear messages</button>
+    <div *ngFor='let message of messageService.messages'> {{message.text}} </div>
+</div>
+
+<div *ngIf="messageService.messages.length">
+    <div *ngFor="let message of messageService.messages">
+        <div draggable="true" (click)="onDrag($event)" (drag)="onDrag($event)" class="toast-container">
+            <div class="toast-message">
+                <div class="toast-header">
+                    <div class="toast-icon-container">
+                        <i class="toast-icon fas fa-info-circle"></i>
+                    </div>
+                    <h4 class="toast-title">{{ message.type }}</h4>
+                    <button type="button" class="close" (click)="hide()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="toast-body">{{ message.text }}</div>
+            </div>
+        </div>      
+    </div>
+</div>
